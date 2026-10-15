@@ -15,6 +15,9 @@ const SAMPLES = [
   { file: 'northgate-2026-09.pdf', label: 'Northgate Bank', note: 'UK, paid out and paid in, overdrawn' },
   { file: 'aurelia-2026-09.pdf', label: 'Banca Aurelia', note: 'Italy, decimal commas, two dates' },
   { file: 'kestrel-2026-12.pdf', label: 'Kestrel Federal', note: 'CR and DR, one balance a day' },
+  { file: 'bayside-2026-10.pdf', label: 'Bayside National', note: 'US, sections by kind, no running balance' },
+  { file: 'redwood-2026-10.pdf', label: 'Redwood Valley', note: 'US, check numbers, credits and debits' },
+  { file: 'lakemont-2026-10.pdf', label: 'Lakemont Bank', note: 'US, sections and a daily balance table' },
   { file: 'harbor-pine-2026-09-scan.pdf', label: 'Harbor & Pine, scanned', note: 'No text layer: Gemma 4 reads it' },
 ];
 

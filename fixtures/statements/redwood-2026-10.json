@@ -1,0 +1,379 @@
+{
+ "bank": "Redwood Valley Bank",
+ "layout": "check-number-credits-debits-daily-balance",
+ "currency": "USD",
+ "period": [
+  "2026-10-01",
+  "2026-10-31"
+ ],
+ "opening_cents": 989658,
+ "closing_cents": 826542,
+ "transactions": [
+  {
+   "date": "2026-10-01",
+   "description": "MONTHLY SERVICE FEE",
+   "amount_cents": -1500,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-01",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -5397,
+   "balance_cents": 982761
+  },
+  {
+   "date": "2026-10-02",
+   "description": "COSTCO WHSE #0482 RICHMOND CA",
+   "amount_cents": -21781,
+   "balance_cents": 960980
+  },
+  {
+   "date": "2026-10-03",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 6352,
+   "balance_cents": 967332
+  },
+  {
+   "date": "2026-10-04",
+   "description": "MONTHLY SERVICE FEE",
+   "amount_cents": -1500,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-04",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -49164,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-04",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 384816,
+   "balance_cents": 1301484
+  },
+  {
+   "date": "2026-10-05",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-05",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -8615,
+   "balance_cents": 1288549
+  },
+  {
+   "date": "2026-10-07",
+   "description": "ADOBE *CREATIVE CLOUD 800-833-6687",
+   "amount_cents": -5999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-07",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 426,
+   "balance_cents": 1282976
+  },
+  {
+   "date": "2026-10-08",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 197488,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-08",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -179574,
+   "balance_cents": 1300890
+  },
+  {
+   "date": "2026-10-09",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 376,
+   "balance_cents": 1301266
+  },
+  {
+   "date": "2026-10-10",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 98491,
+   "balance_cents": 1399757
+  },
+  {
+   "date": "2026-10-11",
+   "description": "SHELL OIL 57444 EMERYVILLE CA",
+   "amount_cents": -6924,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-11",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -1270,
+   "balance_cents": 1391563
+  },
+  {
+   "date": "2026-10-12",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-12",
+   "description": "SHELL OIL 57444 EMERYVILLE CA",
+   "amount_cents": -6592,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-12",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 278571,
+   "balance_cents": 1659222
+  },
+  {
+   "date": "2026-10-13",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 4631,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-13",
+   "description": "UPS*1Z9X44A60318772 UPS.COM",
+   "amount_cents": -3881,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-13",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 189111,
+   "balance_cents": 1849083
+  },
+  {
+   "date": "2026-10-14",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 441,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-14",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -39333,
+   "balance_cents": 1810191
+  },
+  {
+   "date": "2026-10-15",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -4933,
+   "balance_cents": 1805258
+  },
+  {
+   "date": "2026-10-16",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 313694,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-16",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 64245,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-16",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -591201,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-16",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 170488,
+   "balance_cents": 1762484
+  },
+  {
+   "date": "2026-10-17",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 90056,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-17",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 370517,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-17",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 5501,
+   "balance_cents": 2228558
+  },
+  {
+   "date": "2026-10-18",
+   "description": "INTUIT *QBOOKS ONLINE CL.INTUIT.COM",
+   "amount_cents": -9000,
+   "balance_cents": 2219558
+  },
+  {
+   "date": "2026-10-19",
+   "description": "COSTCO WHSE #0482 RICHMOND CA",
+   "amount_cents": -8303,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-19",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -6642,
+   "balance_cents": 2204613
+  },
+  {
+   "date": "2026-10-20",
+   "description": "SHELL OIL 57444 EMERYVILLE CA",
+   "amount_cents": -5687,
+   "balance_cents": 2198926
+  },
+  {
+   "date": "2026-10-21",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -3286,
+   "balance_cents": 2195640
+  },
+  {
+   "date": "2026-10-23",
+   "description": "RENT 14 HARBOR ST UNIT B",
+   "amount_cents": -315000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-23",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 1876320
+  },
+  {
+   "date": "2026-10-24",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 4586,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-24",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -181390,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-24",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -219726,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-24",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 372554,
+   "balance_cents": 1852344
+  },
+  {
+   "date": "2026-10-25",
+   "description": "USPS PO 0512 OAKLAND CA",
+   "amount_cents": -4727,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-25",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 127,
+   "balance_cents": 1847744
+  },
+  {
+   "date": "2026-10-26",
+   "description": "ACH DEBIT GREEN BEAN IMPORTERS LLC CO ID 4419920031 PPD REF 88213",
+   "amount_cents": -386634,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-26",
+   "description": "USPS PO 0512 OAKLAND CA",
+   "amount_cents": -5285,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-26",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 206,
+   "balance_cents": 1456031
+  },
+  {
+   "date": "2026-10-27",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -48651,
+   "balance_cents": 1407380
+  },
+  {
+   "date": "2026-10-28",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 339994,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-28",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 298,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-28",
+   "description": "ACH DEBIT GREEN BEAN IMPORTERS LLC CO ID 4419920031 PPD REF 88213",
+   "amount_cents": -311852,
+   "balance_cents": 1435820
+  },
+  {
+   "date": "2026-10-29",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 217692,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-29",
+   "description": "WIRE TRANSFER OUT FEE",
+   "amount_cents": -3000,
+   "balance_cents": 1650512
+  },
+  {
+   "date": "2026-10-30",
+   "description": "WIRE TRANSFER OUT FEE",
+   "amount_cents": -3000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-30",
+   "description": "RENT 14 HARBOR ST UNIT B",
+   "amount_cents": -315000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-30",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -633809,
+   "balance_cents": 698703
+  },
+  {
+   "date": "2026-10-31",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 150359,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-31",
+   "description": "AMAZON WEB SERVICES AWS.AMAZON.CO",
+   "amount_cents": -8521,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-31",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": 826542
+  }
+ ]
+}

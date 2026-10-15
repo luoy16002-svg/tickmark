@@ -1,0 +1,343 @@
+{
+ "bank": "Bayside National Bank",
+ "layout": "sections-signed-no-balance",
+ "currency": "USD",
+ "period": [
+  "2026-10-01",
+  "2026-10-31"
+ ],
+ "opening_cents": 2408798,
+ "closing_cents": 2869862,
+ "transactions": [
+  {
+   "date": "2026-10-05",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 363,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-09",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 190059,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-09",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 96996,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-10",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 326898,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-13",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 243447,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-14",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 51316,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-15",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 375659,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-16",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 215656,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-18",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 139951,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-18",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 273113,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-19",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 140299,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-20",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 83720,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-21",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 3430,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-22",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 230185,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-22",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 141534,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-23",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 85069,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-24",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 91553,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-24",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 269449,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-24",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 264582,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-25",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 231,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-25",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 237842,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-26",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 224555,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-27",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 272,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-30",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 336258,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-01",
+   "description": "AMAZON WEB SERVICES AWS.AMAZON.CO",
+   "amount_cents": -8431,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-01",
+   "description": "RENT 14 HARBOR ST UNIT B",
+   "amount_cents": -315000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-03",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -603373,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-06",
+   "description": "RENT 14 HARBOR ST UNIT B",
+   "amount_cents": -315000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-09",
+   "description": "AMAZON WEB SERVICES AWS.AMAZON.CO",
+   "amount_cents": -4855,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-10",
+   "description": "ADOBE *CREATIVE CLOUD 800-833-6687",
+   "amount_cents": -5999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-11",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -184864,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-12",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-12",
+   "description": "INTUIT *QBOOKS ONLINE CL.INTUIT.COM",
+   "amount_cents": -9000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-13",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-16",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -42101,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-19",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -41191,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-20",
+   "description": "RENT 14 HARBOR ST UNIT B",
+   "amount_cents": -315000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-21",
+   "description": "AMZN MKTP US*2K4T91 AMZN.COM/BILL",
+   "amount_cents": -4119,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-23",
+   "description": "ACH DEBIT GREEN BEAN IMPORTERS LLC CO ID 4419920031 PPD REF 88213",
+   "amount_cents": -364584,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-24",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-24",
+   "description": "INTUIT *QBOOKS ONLINE CL.INTUIT.COM",
+   "amount_cents": -9000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-24",
+   "description": "INTUIT *QBOOKS ONLINE CL.INTUIT.COM",
+   "amount_cents": -9000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-25",
+   "description": "RENT 14 HARBOR ST UNIT B",
+   "amount_cents": -315000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-25",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -36231,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-25",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -707030,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-27",
+   "description": "AMZN MKTP US*2K4T91 AMZN.COM/BILL",
+   "amount_cents": -8307,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-30",
+   "description": "AMAZON WEB SERVICES AWS.AMAZON.CO",
+   "amount_cents": -8982,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-31",
+   "description": "AMZN MKTP US*2K4T91 AMZN.COM/BILL",
+   "amount_cents": -4658,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-05",
+   "description": "CHECK #1042",
+   "amount_cents": -74054,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-28",
+   "description": "CHECK #1042",
+   "amount_cents": -52279,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-30",
+   "description": "CHECK #1042",
+   "amount_cents": -83497,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-01",
+   "description": "MONTHLY SERVICE FEE",
+   "amount_cents": -1500,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-09",
+   "description": "WIRE TRANSFER OUT FEE",
+   "amount_cents": -3000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-15",
+   "description": "MONTHLY SERVICE FEE",
+   "amount_cents": -1500,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-24",
+   "description": "MONTHLY SERVICE FEE",
+   "amount_cents": -1500,
+   "balance_cents": null
+  }
+ ]
+}

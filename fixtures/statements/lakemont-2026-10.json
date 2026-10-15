@@ -1,0 +1,307 @@
+{
+ "bank": "LAKEMONT BANK",
+ "layout": "sections-unsigned-daily-balance-table",
+ "currency": "USD",
+ "period": [
+  "2026-10-01",
+  "2026-10-31"
+ ],
+ "opening_cents": 861214,
+ "closing_cents": 996033,
+ "transactions": [
+  {
+   "date": "2026-10-01",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 2715,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-01",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -29975,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-01",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 363312,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-01",
+   "description": "RENT 14 HARBOR ST UNIT B",
+   "amount_cents": -315000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-01",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 2207,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-02",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-03",
+   "description": "SHELL OIL 57444 EMERYVILLE CA",
+   "amount_cents": -6979,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-03",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 3149,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-04",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -8879,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-07",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 3074,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-07",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-07",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 234608,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-08",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 4696,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-08",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-09",
+   "description": "SHELL OIL 57444 EMERYVILLE CA",
+   "amount_cents": -6978,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-09",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 267188,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-09",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 2344,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-10",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -41467,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-11",
+   "description": "ADOBE *CREATIVE CLOUD 800-833-6687",
+   "amount_cents": -5999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-11",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 62839,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-11",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 175163,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-11",
+   "description": "USPS PO 0512 OAKLAND CA",
+   "amount_cents": -3840,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-12",
+   "description": "RENT 14 HARBOR ST UNIT B",
+   "amount_cents": -315000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-12",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -612395,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-14",
+   "description": "INTUIT *QBOOKS ONLINE CL.INTUIT.COM",
+   "amount_cents": -9000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-14",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 292,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-15",
+   "description": "MONTHLY SERVICE FEE",
+   "amount_cents": -1500,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-15",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 290861,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-17",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 100836,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-18",
+   "description": "ADOBE *CREATIVE CLOUD 800-833-6687",
+   "amount_cents": -5999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-18",
+   "description": "USPS PO 0512 OAKLAND CA",
+   "amount_cents": -5094,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-18",
+   "description": "1042 ^",
+   "amount_cents": -80711,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-19",
+   "description": "USPS PO 0512 OAKLAND CA",
+   "amount_cents": -4578,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-19",
+   "description": "UPS*1Z9X44A60318772 UPS.COM",
+   "amount_cents": -10989,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-21",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 258577,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-21",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 146891,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-21",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 188,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-22",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 458,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-23",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-23",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -43049,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-23",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-25",
+   "description": "ADOBE *CREATIVE CLOUD 800-833-6687",
+   "amount_cents": -5999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-26",
+   "description": "1042 ^",
+   "amount_cents": -95105,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-26",
+   "description": "INTUIT *QBOOKS ONLINE CL.INTUIT.COM",
+   "amount_cents": -9000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-26",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 77104,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-26",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 5300,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-28",
+   "description": "RENT 14 HARBOR ST UNIT B",
+   "amount_cents": -315000,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-28",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 4825,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-10-30",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 101686,
+   "balance_cents": null
+  }
+ ]
+}

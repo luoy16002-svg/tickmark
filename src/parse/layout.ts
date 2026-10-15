@@ -22,6 +22,8 @@ export interface Line {
   y: number;
   h: number;
   cells: Cell[];
+  /** The pieces of text as the PDF drew them, before neighbours were joined into cells. */
+  items: Cell[];
   text: string;
 }
 
@@ -70,5 +72,6 @@ function makeLine(page: number, items: TextItem[]): Line {
   }
   for (const c of cells) c.text = c.text.replace(/\s+/g, ' ').trim();
   const y = items.reduce((s, i) => s + i.y, 0) / items.length;
-  return { page, y, h, cells: cells.filter((c) => c.text), text: cells.map((c) => c.text).join(' ') };
+  const raw = items.map((i) => ({ text: i.str.trim(), x0: i.x0, x1: i.x1 })).filter((c) => c.text);
+  return { page, y, h, cells: cells.filter((c) => c.text), items: raw, text: cells.map((c) => c.text).join(' ') };
 }

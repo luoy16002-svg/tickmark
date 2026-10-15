@@ -19,7 +19,13 @@ for (const name of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
   test(`${key}: every row matches the answer key and ties to the balance`, async () => {
     const want = JSON.parse(readFileSync(join(DIR, name), 'utf8'));
     const { parsed } = await parseFile(join(DIR, `${key}.pdf`));
-    const got = parsed.transactions;
+    let got = parsed.transactions;
+    // a ledger listed by date from category sections: compare each day's rows regardless of their order within the day
+    if (/daily-balance-table/.test(want.layout)) {
+      const k = (d: string, a: number, s: string) => `${d}|${String(a).padStart(12)}|${s}`;
+      want.transactions.sort((x: Record<string, any>, y: Record<string, any>) => k(x.date, x.amount_cents, x.description).localeCompare(k(y.date, y.amount_cents, y.description)));
+      got = [...got].sort((x, y) => k(x.date, x.amount, x.description).localeCompare(k(y.date, y.amount, y.description)));
+    }
     const problems: string[] = [];
     if (got.length !== want.transactions.length) problems.push(`rows: got ${got.length}, want ${want.transactions.length}`);
     want.transactions.forEach((w: Record<string, unknown>, i: number) => {

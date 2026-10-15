@@ -409,6 +409,284 @@ def layout_crdr(st: Statement, path: Path):
     return answer(st, bank, 'single-amount-cr-dr-daily-balance', 'USD')
 
 
+def _sections(st: Statement):
+    checks = [t for t in st.txs if t.cents < 0 and t.lines[0].startswith('CHECK')]
+    fees = [t for t in st.txs if t.cents < 0 and 'FEE' in t.lines[0]]
+    deposits = [t for t in st.txs if t.cents > 0]
+    withdrawals = [t for t in st.txs if t.cents < 0 and t not in checks and t not in fees]
+    return deposits, withdrawals, checks, fees
+
+
+# ---------------------------------------------------------------- E: sections by kind, signed amounts, no balances
+def layout_sections(st: Statement, path: Path):
+    bank = 'Bayside National Bank'
+    W, H = LETTER
+    c = canvas.Canvas(str(path), pagesize=LETTER)
+    for t in st.txs:
+        t.show_balance = False
+    deposits, withdrawals, checks, fees = _sections(st)
+    closing = st.txs[-1].balance
+    total = lambda ts: sum(t.cents for t in ts)
+
+    def header(c, page, first):
+        c.setFont('Helvetica-Bold', 14)
+        c.drawString(54, H - 58, bank)
+        c.setFont('Helvetica', 8.5)
+        c.drawString(54, H - 71, 'Your Business Advantage Checking  ·  Account number: 0000 3318 7720')
+        c.drawRightString(558, H - 58, f'for {st.start:%B} {st.start.day}, {st.start.year} to {st.end:%B} {st.end.day}, {st.end.year}')
+        c.drawRightString(558, H - 71, f'Page {page}')
+        y = H - 104
+        if first:
+            c.setFont('Helvetica-Bold', 10)
+            c.drawString(54, y, 'Account summary')
+            c.setFont('Helvetica', 9.5)
+            rows = [(f'Beginning balance on {st.start:%B} {st.start.day}, {st.start.year}', money(st.opening)),
+                    ('Deposits and other additions', money(total(deposits))),
+                    ('Withdrawals and other subtractions', '-' + money(total(withdrawals))),
+                    ('Checks', '-' + money(total(checks))),
+                    ('Service fees', '-' + money(total(fees))),
+                    (f'Ending balance on {st.end:%B} {st.end.day}, {st.end.year}', bal(closing, 'us'))]
+            for i, (k, v) in enumerate(rows):
+                c.drawString(70, y - 16 - i * 13, k)
+                c.drawRightString(400, y - 16 - i * 13, ('-$' + v[1:]) if v.startswith('-') else '$' + v)
+            y -= 106
+        return y
+
+    def footer(c, page):
+        c.setFont('Helvetica', 7.5)
+        c.drawString(54, 36, 'Bayside National Bank, Member FDIC. Equal Housing Lender.')
+
+    p = Pager(c, LETTER, H, 76, header, footer)
+    xs = dict(date=54, desc=110, amt=558)
+    for title, ts, signed_out in [('Deposits and other additions', deposits, False),
+                                  ('Withdrawals and other subtractions', withdrawals, True),
+                                  ('Checks', checks, True), ('Service fees', fees, True)]:
+        if not ts:
+            continue
+        p.need(52)
+        c.setFont('Helvetica-Bold', 10.5)
+        c.drawString(54, p.y - 6, title)
+        p.y -= 22
+        c.setFont('Helvetica-Bold', 8.5)
+        c.drawString(xs['date'], p.y, 'Date')
+        c.drawString(xs['desc'], p.y, 'Description')
+        c.drawRightString(xs['amt'], p.y, 'Amount')
+        c.line(54, p.y - 4, 558, p.y - 4)
+        p.y -= 16
+        for t in ts:
+            h = 11 * len(t.lines) + 3
+            p.need(h)
+            c.setFont('Helvetica', 8.5)
+            c.drawString(xs['date'], p.y, f'{t.day:%m/%d/%y}')
+            for j, line in enumerate(t.lines):
+                c.drawString(xs['desc'], p.y - 11 * j, line)
+            c.drawRightString(xs['amt'], p.y, ('-' if signed_out else '') + money(t.cents))
+            p.y -= h
+        p.need(20)
+        c.setFont('Helvetica-Bold', 8.5)
+        c.drawString(xs['desc'], p.y - 2, f'Total {title.lower()}')
+        c.drawRightString(xs['amt'], p.y - 2, ('-$' if signed_out else '$') + money(total(ts)))
+        p.y -= 26
+    footer(c, p.page)
+    c.save()
+    ans = answer(st, bank, 'sections-signed-no-balance', 'USD')
+    order = deposits + withdrawals + checks + fees
+    by_id = {id(t): a for t, a in zip(st.txs, ans['transactions'])}
+    ans['transactions'] = [by_id[id(t)] for t in order]
+    ans['closing_cents'] = closing
+    return ans
+
+
+# ---------------------------------------------------------------- F: check-number column, credits/debits, daily balance
+def layout_checknum(st: Statement, path: Path):
+    bank = 'Redwood Valley Bank'
+    W, H = LETTER
+    c = canvas.Canvas(str(path), pagesize=LETTER)
+    for t in st.txs:
+        t.show_balance = False
+    for i, t in enumerate(st.txs):
+        if i == len(st.txs) - 1 or st.txs[i + 1].day != t.day:
+            t.show_balance = True
+    xs = dict(date=50, chk=86, desc=134, cr=420, dr=492, bal=562)
+
+    def header(c, page, first):
+        c.setFont('Helvetica-Bold', 14)
+        c.drawString(50, H - 56, bank)
+        c.setFont('Helvetica', 8.5)
+        c.drawString(50, H - 69, 'Initiate Business Checking')
+        c.drawRightString(562, H - 56, f'{st.start:%B} {st.start.day}, {st.start.year} - {st.end:%B} {st.end.day}, {st.end.year}  ·  Page {page}')
+        y = H - 96
+        if first:
+            c.setFont('Helvetica', 9)
+            c.drawString(50, y, f'Beginning balance on {st.start.month}/{st.start.day}')
+            c.drawRightString(300, y, '$' + money(st.opening))
+            c.drawString(50, y - 12, f'Ending balance on {st.end.month}/{st.end.day}')
+            c.drawRightString(300, y - 12, bal(st.txs[-1].balance, 'us') if st.txs[-1].balance < 0 else '$' + money(st.txs[-1].balance))
+            y -= 34
+            c.setFont('Helvetica-Bold', 10)
+            c.drawString(50, y, 'Transaction history')
+            y -= 18
+        c.setFont('Helvetica-Bold', 7.5)
+        c.drawString(xs['date'], y, 'Date')
+        c.drawString(xs['chk'], y, 'Check Number')
+        c.drawString(xs['desc'], y, 'Description')
+        c.drawRightString(xs['cr'], y, 'Deposits/Credits')
+        c.drawRightString(xs['dr'], y, 'Withdrawals/Debits')
+        c.drawRightString(xs['bal'], y, 'Ending daily balance')
+        c.line(50, y - 4, 562, y - 4)
+        return y - 16
+
+    def footer(c, page):
+        c.setFont('Helvetica', 7)
+        c.drawString(50, 34, 'Redwood Valley Bank, N.A. Member FDIC.')
+
+    p = Pager(c, LETTER, H, 72, header, footer)
+    ans = answer(st, bank, 'check-number-credits-debits-daily-balance', 'USD')
+    for a, t in zip(ans['transactions'], st.txs):
+        h = 11 * len(t.lines) + 3
+        p.need(h)
+        c.setFont('Helvetica', 8)
+        c.drawString(xs['date'], p.y, f'{t.day.month}/{t.day.day}')
+        lines = list(t.lines)
+        if lines[0].startswith('CHECK #'):
+            num = lines[0].split('#')[1]
+            c.drawString(xs['chk'], p.y, num)
+            lines = ['Check'] + lines[1:]
+            a['description'] = ' '.join([num] + lines)
+        for j, line in enumerate(lines):
+            c.drawString(xs['desc'], p.y - 11 * j, line)
+        c.drawRightString(xs['cr'] if t.cents > 0 else xs['dr'], p.y, money(t.cents))
+        if t.show_balance:
+            c.drawRightString(xs['bal'], p.y, bal(t.balance, 'us'))
+        p.y -= h
+    p.need(18)
+    c.setFont('Helvetica-Bold', 8)
+    c.drawString(xs['desc'], p.y - 4, 'Totals')
+    c.drawRightString(xs['cr'], p.y - 4, '$' + money(sum(t.cents for t in st.txs if t.cents > 0)))
+    c.drawRightString(xs['dr'], p.y - 4, '$' + money(-sum(t.cents for t in st.txs if t.cents < 0)))
+    footer(c, p.page)
+    c.save()
+    return ans
+
+
+# ---------------------------------------------------------------- G: sections, unsigned amounts, daily balance table
+def layout_daily_table(st: Statement, path: Path):
+    bank = 'LAKEMONT BANK'
+    W, H = LETTER
+    c = canvas.Canvas(str(path), pagesize=LETTER)
+    for t in st.txs:
+        t.show_balance = False
+    deposits, withdrawals, checks, fees = _sections(st)
+    cards = [t for t in withdrawals if t.lines[0].startswith(('SQ ', 'COSTCO', 'SHELL', 'AMZN', 'UPS', 'USPS', 'GOOGLE', 'ADOBE', 'AMAZON'))]
+    electronic = [t for t in withdrawals if t not in cards]
+    total = lambda ts: sum(t.cents for t in ts)
+    closing = st.txs[-1].balance
+
+    def header(c, page, first):
+        c.setFont('Helvetica-Bold', 13)
+        c.drawString(54, H - 58, bank)
+        c.setFont('Helvetica', 8.5)
+        c.drawRightString(558, H - 58, f'{st.start:%B} {st.start.day:02d}, {st.start.year} through {st.end:%B} {st.end.day:02d}, {st.end.year}')
+        c.drawRightString(558, H - 71, f'Page {page}')
+        y = H - 100
+        if first:
+            c.setFont('Helvetica-Bold', 9.5)
+            c.drawString(54, y, 'CHECKING SUMMARY')
+            c.setFont('Helvetica', 9)
+            rows = [('Beginning Balance', '$' + money(st.opening)), ('Deposits and Additions', money(total(deposits))),
+                    ('Checks Paid', '-' + money(total(checks))), ('ATM & Debit Card Withdrawals', '-' + money(total(cards))),
+                    ('Electronic Withdrawals', '-' + money(total(electronic))), ('Fees', '-' + money(total(fees))),
+                    ('Ending Balance', bal(closing, 'us') if closing < 0 else '$' + money(closing))]
+            for i, (k, v) in enumerate(rows):
+                c.drawString(70, y - 15 - i * 12, k)
+                c.drawRightString(360, y - 15 - i * 12, v)
+            y -= 108
+        return y
+
+    def footer(c, page):
+        c.setFont('Helvetica', 7)
+        c.drawString(54, 34, 'Lakemont Bank, N.A. Member FDIC')
+
+    p = Pager(c, LETTER, H, 76, header, footer)
+    xs = dict(date=54, desc=110, amt=558)
+
+    def section(title, ts, check_table=False):
+        if not ts:
+            return
+        p.need(52)
+        c.setFont('Helvetica-Bold', 9.5)
+        c.drawString(54, p.y - 6, title)
+        p.y -= 22
+        c.setFont('Helvetica-Bold', 8)
+        if check_table:
+            c.drawString(54, p.y, 'CHECK NO.')
+            c.drawString(150, p.y, 'DESCRIPTION')
+            c.drawString(400, p.y, 'DATE PAID')
+        else:
+            c.drawString(xs['date'], p.y, 'DATE')
+            c.drawString(xs['desc'], p.y, 'DESCRIPTION')
+        c.drawRightString(xs['amt'], p.y, 'AMOUNT')
+        c.line(54, p.y - 4, 558, p.y - 4)
+        p.y -= 16
+        for t in ts:
+            h = 11 * len(t.lines) + 3
+            p.need(h)
+            c.setFont('Helvetica', 8)
+            if check_table:
+                c.drawString(54, p.y, t.lines[0].split('#')[1])
+                c.drawString(150, p.y, '^')
+                c.drawString(400, p.y, f'{t.day:%m/%d}')
+            else:
+                c.drawString(xs['date'], p.y, f'{t.day:%m/%d}')
+                for j, line in enumerate(t.lines):
+                    c.drawString(xs['desc'], p.y - 11 * j, line)
+            c.drawRightString(xs['amt'], p.y, '$' + money(t.cents))
+            p.y -= h
+        p.need(18)
+        c.setFont('Helvetica-Bold', 8)
+        c.drawString(xs['desc'], p.y - 2, f'Total {title.title()}')
+        c.drawRightString(xs['amt'], p.y - 2, '$' + money(abs(total(ts))))
+        p.y -= 26
+
+    section('DEPOSITS AND ADDITIONS', deposits)
+    section('CHECKS PAID', checks, check_table=True)
+    section('ATM & DEBIT CARD WITHDRAWALS', cards)
+    section('ELECTRONIC WITHDRAWALS', electronic)
+    section('FEES', fees)
+    # the balance at the end of every day with activity, three pairs to a line
+    days = []
+    for i, t in enumerate(st.txs):
+        if i == len(st.txs) - 1 or st.txs[i + 1].day != t.day:
+            days.append((t.day, t.balance))
+    p.need(40)
+    c.setFont('Helvetica-Bold', 9.5)
+    c.drawString(54, p.y - 6, 'DAILY ENDING BALANCE')
+    p.y -= 22
+    c.setFont('Helvetica-Bold', 8)
+    for k, x in enumerate((54, 230, 406)):
+        c.drawString(x, p.y, 'DATE')
+        c.drawRightString(x + 140, p.y, 'AMOUNT')
+    p.y -= 14
+    for r in range(0, len(days), 3):
+        p.need(12)
+        c.setFont('Helvetica', 8)
+        for k, (d, b) in enumerate(days[r:r + 3]):
+            x = (54, 230, 406)[k]
+            c.drawString(x, p.y, f'{d:%m/%d}')
+            c.drawRightString(x + 140, p.y, bal(b, 'us') if b < 0 else '$' + money(b))
+        p.y -= 12
+    footer(c, p.page)
+    c.save()
+    ans = answer(st, bank, 'sections-unsigned-daily-balance-table', 'USD')
+    # the answer key in date order (the ledger lists rows by date when balances are only given per day)
+    for a, t in zip(ans['transactions'], st.txs):
+        if t.lines[0].startswith('CHECK #'):
+            a['description'] = t.lines[0].split('#')[1] + ' ^'
+        a['balance_cents'] = None
+    ans['closing_cents'] = closing
+    return ans
+
+
 def scanned_copy(src: Path, dst_pdf: Path, dst_png: Path, rng: random.Random, dpi=150):
     """Rasterise, tilt a little, add grain and JPEG artefacts, then wrap the pages in an image-only PDF."""
     doc = fitz.open(src)
@@ -437,6 +715,9 @@ def main():
         ('northgate-2026-09', layout_uk, date(2026, 9, 1), 58),
         ('aurelia-2026-09', layout_eu, date(2026, 9, 1), 47),
         ('kestrel-2026-12', layout_crdr, date(2026, 12, 1), 52),
+        ('bayside-2026-10', layout_sections, date(2026, 10, 1), 55),
+        ('redwood-2026-10', layout_checknum, date(2026, 10, 1), 61),
+        ('lakemont-2026-10', layout_daily_table, date(2026, 10, 1), 49),
     ]
     for key, fn, start, n in jobs:
         st = month_of(rng, key, start, n)

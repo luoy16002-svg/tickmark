@@ -12,7 +12,7 @@ Nothing is uploaded. The page counts every request it makes to another site and 
 
 ## What it reads
 
-- Text PDFs as banks issue them: one signed amount column, separate money-in and money-out columns, CR and DR
+- Text PDFs as banks issue them: one table or sections by kind (deposits, withdrawals, checks, fees), one signed amount column, separate money-in and money-out columns, a check-number column, a separate daily-balance table, CR and DR
   markers, balances on every row or only at the end of each day, overdrawn balances (`-`, `OD`, a trailing minus),
   decimal commas, two date columns (booking and value), descriptions that run onto several lines, balances brought
   and carried forward between pages.

@@ -29,7 +29,7 @@ export interface Transaction {
   amount: number;
   /** The balance printed on this row, signed cents. */
   balance?: number;
-  signFrom: 'column' | 'marker' | 'balance' | 'guess';
+  signFrom: 'column' | 'marker' | 'section' | 'balance' | 'guess';
   check: Check;
   /** Printed balance minus the running balance, in cents, on the row where a gap shows. */
   diff?: number;
@@ -63,9 +63,9 @@ export interface Parsed {
 const HEAD: [ColKind, RegExp][] = [
   ['balance', /\bbalance\b|^saldo$/i],
   ['date2', /^(value date|effective date|value|valuta)$/i],
-  ['date', /^(date|posted|posting date|post date|posted date|trans(action)?\.? date|booking date|txn date|tran date|date posted|entry date|data)$/i],
-  ['debit', /^(debits?|withdrawals?|paid out|money out|payments?( out)?|charges|out|withdrawals? \(-\)|debit amount|dare|soll|uscite)$/i],
-  ['credit', /^(credits?|deposits?|paid in|money in|receipts|in|deposits? \(\+\)|credit amount|avere|haben|entrate)$/i],
+  ['date', /^(date|posted|posting date|post date|posted date|trans(action)?\.? date|booking date|txn date|tran date|date posted|date paid|entry date|data)$/i],
+  ['debit', /(withdraw|debit|paid out|money out)|^(payments?( out)?|charges|out|dare|soll|uscite)$/i],
+  ['credit', /(deposit|credit|paid in|money in)|^(receipts|in|avere|haben|entrate)$/i],
   ['amount', /^(amount|transaction amount|amount \(.*\)|importo|betrag)$/i],
   ['desc', /(description|details|transaction|narrative|particulars|payee|memo|payment type|descrizione)/i],
 ];
@@ -74,6 +74,10 @@ const OPENING = /(balance brought forward|brought forward|opening balance|beginn
 const CARRIED = /(balance carried forward|carried forward|balance c\/f)/i;
 const CLOSING = /(closing balance|ending balance|new balance|balance at end|saldo finale)/i;
 const TOTALS = /^(total|totals|subtotal|sum)\b/i;
+// section titles some banks print instead of one table; the money in a section goes one way
+const SECTION_IN = /^(deposits?( and (other )?(additions|credits))?|credits|additions|other credits|money in)$/i;
+const SECTION_OUT = /^(withdrawals?( and (other )?(subtractions|debits))?|checks( paid)?|cheques( paid)?|atm (&|and) debit card withdrawals|card purchases|electronic withdrawals|other withdrawals|other debits|debits|fees|service (fees|charges)|payments)$/i;
+const SECTION_DAILY = /^daily (ending )?balances?( summary)?$/i;
 // lines of an account summary box, which a reader of a scan may copy as if they were rows
 const SUMMARY = /(deposits and (other )?credits|withdrawals and (other )?debits|total (deposits|withdrawals|credits|debits|money in|money out|paid in|paid out)|^(deposits|withdrawals|credits|debits|money in|money out)$|number of (deposits|withdrawals|transactions)|average (daily )?balance)/i;
 const CODES = new Set(['DD', 'SO', 'BP', 'CR', 'DR', 'VIS', 'TFR', 'FPI', 'FPO', 'CHG', 'CHQ', 'ATM', 'POS', 'DEB', 'BGC',
@@ -86,8 +90,35 @@ export function kindOf(text: string): ColKind | null {
 }
 
 function headerColumns(line: Line): Column[] | null {
+  // headings set close together get joined into one cell ("Check NumberDescription"); the pieces as drawn keep
+  // them apart, so read both ways and keep whichever finds more columns
+  const a = columnsOf(line.cells);
+  const b = line.items?.length ? columnsOf(line.items) : null;
+  if (a && b) return new Set(b.map((c) => c.kind)).size > new Set(a.map((c) => c.kind)).size ? b : a;
+  return a ?? b;
+}
+
+// Headings a PDF ran together into one piece of text ("Deposits/Credits Withdrawals/Debits") are split again at
+// the phrases banks use, each part placed by its share of the characters.
+const HEADING_PHRASES = /(ending daily balance|daily balance|running balance|balance|deposits?\s*\/\s*credits?|withdrawals?\s*\/\s*debits?|debits?\s*\/\s*withdrawals?|credits?\s*\/\s*deposits?|deposits?|withdrawals?|credits?|debits?|paid out|paid in|money out|money in|payment type and details|transaction details|description|details|check number|check no\.?|date paid|posting date|booking date|value date|date|amount)/gi;
+
+function splitHeading(c: Cell): Cell[] {
+  const found = [...c.text.matchAll(HEADING_PHRASES)];
+  if (found.length < 2) return [c];
+  const kinds = new Set(found.map((m) => kindOf(m[0]) ?? m[0].toLowerCase()));
+  if (kinds.size < 2) return [c];
+  const per = (c.x1 - c.x0) / Math.max(1, c.text.length);
+  const starts = found.map((m) => m.index!);
+  return starts.map((start, i) => {
+    const end = i + 1 < starts.length ? starts[i + 1] : c.text.length;
+    const text = c.text.slice(start, end).trim();
+    return { text, x0: c.x0 + start * per, x1: c.x0 + (start + text.length) * per };
+  });
+}
+
+function columnsOf(cells: Cell[]): Column[] | null {
   const cols: Column[] = [];
-  for (const c of line.cells) {
+  for (const c of cells.flatMap(splitHeading)) {
     const k = kindOf(c.text);
     if (k) cols.push({ kind: k, label: c.text, x0: c.x0, x1: c.x1 });
   }
@@ -114,6 +145,8 @@ function numericColumn(cell: Cell, cols: Column[]): Column | null {
 
 interface RawRow {
   kind: 'tx' | 'cp' | 'cont';
+  /** +1 or -1 when the row sits under a section title that says which way its money goes. */
+  section?: number;
   line: Line;
   date?: PartialDate;
   valueDate?: PartialDate;
@@ -159,11 +192,55 @@ export function parseStatement(items: TextItem[]): Parsed {
   const rows: RawRow[] = [];
   const summaryOpening: number[] = [];
   const summaryClosing: number[] = [];
+  const daily: { date: PartialDate; cents: number }[] = [];
   let pageCols = cols;
   let prev: RawRow | null = null;
+  let section = 0;
+  let inDaily = false;
+  let started = false;
   for (const l of lines) {
-    pageCols = colsByPage.get(l.page) ?? pageCols;
-    const top = headerAt.get(l.page);
+    // every heading line sets the columns for what follows it, across page breaks, until the next heading
+    const heading = headerColumns(l);
+    if (heading) {
+      pageCols = heading;
+      started = true;
+      inDaily = false;
+      prev = null;
+      continue;
+    }
+    const top = started ? -Infinity : headerAt.get(l.page);
+    // a section title (no figures on the line) says which way the money below it goes, or opens the daily balances
+    const hasMoney = l.cells.some((c) => parseMoney(c.text, decimal));
+    if (!hasMoney && l.text.length < 60) {
+      if (SECTION_DAILY.test(l.text)) {
+        inDaily = true;
+        prev = null;
+        continue;
+      }
+      if (SECTION_IN.test(l.text) || SECTION_OUT.test(l.text)) {
+        section = SECTION_IN.test(l.text) ? 1 : -1;
+        inDaily = false;
+        prev = null;
+        continue;
+      }
+    }
+    if (inDaily) {
+      // date and balance pairs, often three to a line
+      let d: PartialDate | null = null;
+      for (const c of l.cells) {
+        const pd = parseDate(c.text, order);
+        if (pd) d = pd;
+        else if (d) {
+          const m = parseMoney(c.text, decimal);
+          if (m) {
+            daily.push({ date: d, cents: signed(m) });
+            d = null;
+          }
+        }
+      }
+      continue;
+    }
+
     if (top === undefined || l.y <= top + 0.5) {
       // above the table: summary boxes may hold the opening and closing balances
       const money = l.cells.map((c) => parseMoney(c.text, decimal)).filter(Boolean) as Money[];
@@ -183,6 +260,7 @@ export function parseStatement(items: TextItem[]): Parsed {
       prev = null;
       continue;
     }
+    if (section) row.section = section;
     if (row.kind === 'cont') {
       const last = rows[rows.length - 1];
       const close: boolean = !!prev && prev.line.page === l.page && l.y - prev.line.y <= 2.1 * Math.max(l.h, prev.line.h);
@@ -218,7 +296,7 @@ export function parseStatement(items: TextItem[]): Parsed {
       continue;
     }
     const a = r.amount;
-    const sign = a.col === 'debit' ? -1 : a.col === 'credit' ? 1 : a.sign;
+    const sign = a.col === 'debit' ? -1 : a.col === 'credit' ? 1 : a.sign || r.section || 0;
     const y1 = (r as RawRow & { lastY?: number }).lastY ?? r.line.y;
     transactions.push({
       id: transactions.length,
@@ -231,10 +309,26 @@ export function parseStatement(items: TextItem[]): Parsed {
       description: r.desc.join(' ').replace(/\s+/g, ' ').trim(),
       amount: (sign || 1) * a.cents,
       balance: r.balance ? signed(r.balance) : undefined,
-      signFrom: a.col === 'debit' || a.col === 'credit' ? 'column' : sign ? 'marker' : 'guess',
+      signFrom: a.col === 'debit' || a.col === 'credit' ? 'column' : a.sign ? 'marker' : r.section ? 'section' : 'guess',
       check: 'unchecked',
     });
     seq.push({ t: 'tx', i: transactions.length - 1 });
+  }
+
+  // 3b. balances printed only in a separate daily table: rows go in date order, each day's last row gets the
+  //     day's closing balance, and the usual walk checks them
+  if (daily.length && !transactions.some((t) => t.balance !== undefined)) {
+    const byDay = new Map(daily.map((d) => [placeInPeriod(d.date, period), d.cents]));
+    const sorted = transactions.map((t, i) => ({ t, i })).sort((a, b) => a.t.date.localeCompare(b.t.date) || a.i - b.i).map((x) => x.t);
+    sorted.forEach((t, i) => {
+      t.id = i;
+      const next = sorted[i + 1];
+      if ((!next || next.date !== t.date) && byDay.has(t.date)) t.balance = byDay.get(t.date);
+    });
+    transactions.splice(0, transactions.length, ...sorted);
+    seq.splice(0, seq.length, ...sorted.map((_, i) => ({ t: 'tx' as const, i })));
+    checkpoints.length = 0;
+    notes.push('Balances are printed once a day in a separate table; rows are listed by date and checked day by day.');
   }
 
   // 4. opening and closing balances
@@ -474,7 +568,7 @@ function classify(l: Line, cols: Column[], decimal: Decimal, order: 'md' | 'dm')
       else if (!row.amount) row.amount = { ...m, col: col.kind };
       continue;
     }
-    if (!descCol || c.x0 >= Math.min(descCol.x0, (dateCol?.x1 ?? 0) + 4) - 6) row.desc.push(c.text);
+    row.desc.push(c.text);
   }
   const text = row.desc.join(' ');
   if (TOTALS.test(text) && !row.date) return null;
