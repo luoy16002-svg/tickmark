@@ -1,0 +1,325 @@
+{
+ "bank": "Kestrel Federal Bank",
+ "layout": "single-amount-cr-dr-daily-balance",
+ "currency": "USD",
+ "period": [
+  "2026-12-01",
+  "2026-12-31"
+ ],
+ "opening_cents": 2401021,
+ "closing_cents": 179258,
+ "transactions": [
+  {
+   "date": "2026-12-01",
+   "description": "ACH DEBIT GREEN BEAN IMPORTERS LLC CO ID 4419920031 PPD REF 88213",
+   "amount_cents": -334719,
+   "balance_cents": 2066302
+  },
+  {
+   "date": "2026-12-02",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 61988,
+   "balance_cents": 2128290
+  },
+  {
+   "date": "2026-12-03",
+   "description": "SHELL OIL 57444 EMERYVILLE CA",
+   "amount_cents": -5269,
+   "balance_cents": 2123021
+  },
+  {
+   "date": "2026-12-04",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-04",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -49567,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-04",
+   "description": "MONTHLY SERVICE FEE",
+   "amount_cents": -1500,
+   "balance_cents": 2057955
+  },
+  {
+   "date": "2026-12-05",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -42017,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-05",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 2011618
+  },
+  {
+   "date": "2026-12-07",
+   "description": "USPS PO 0512 OAKLAND CA",
+   "amount_cents": -3426,
+   "balance_cents": 2008192
+  },
+  {
+   "date": "2026-12-08",
+   "description": "UPS*1Z9X44A60318772 UPS.COM",
+   "amount_cents": -1847,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-08",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 204,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-08",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -210902,
+   "balance_cents": 1795647
+  },
+  {
+   "date": "2026-12-09",
+   "description": "INTUIT *QBOOKS ONLINE CL.INTUIT.COM",
+   "amount_cents": -9000,
+   "balance_cents": 1786647
+  },
+  {
+   "date": "2026-12-10",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 126516,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-10",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 311749,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-10",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 395003,
+   "balance_cents": 2619915
+  },
+  {
+   "date": "2026-12-11",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 2615595
+  },
+  {
+   "date": "2026-12-12",
+   "description": "CHECK #1042",
+   "amount_cents": -60935,
+   "balance_cents": 2554660
+  },
+  {
+   "date": "2026-12-13",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 424,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-13",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-13",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 163625,
+   "balance_cents": 2704710
+  },
+  {
+   "date": "2026-12-14",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-14",
+   "description": "CHECK #1042",
+   "amount_cents": -95452,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-14",
+   "description": "ACH DEBIT GREEN BEAN IMPORTERS LLC CO ID 4419920031 PPD REF 88213",
+   "amount_cents": -246720,
+   "balance_cents": 2348539
+  },
+  {
+   "date": "2026-12-15",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 68590,
+   "balance_cents": 2417129
+  },
+  {
+   "date": "2026-12-16",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 87367,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-16",
+   "description": "UPS*1Z9X44A60318772 UPS.COM",
+   "amount_cents": -12426,
+   "balance_cents": 2492070
+  },
+  {
+   "date": "2026-12-17",
+   "description": "AMZN MKTP US*2K4T91 AMZN.COM/BILL",
+   "amount_cents": -15289,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-17",
+   "description": "AMAZON WEB SERVICES AWS.AMAZON.CO",
+   "amount_cents": -5991,
+   "balance_cents": 2470790
+  },
+  {
+   "date": "2026-12-18",
+   "description": "UPS*1Z9X44A60318772 UPS.COM",
+   "amount_cents": -4235,
+   "balance_cents": 2466555
+  },
+  {
+   "date": "2026-12-20",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -668244,
+   "balance_cents": 1798311
+  },
+  {
+   "date": "2026-12-21",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 353692,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-21",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 5521,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-21",
+   "description": "USPS PO 0512 OAKLAND CA",
+   "amount_cents": -2626,
+   "balance_cents": 2154898
+  },
+  {
+   "date": "2026-12-22",
+   "description": "UPS*1Z9X44A60318772 UPS.COM",
+   "amount_cents": -6550,
+   "balance_cents": 2148348
+  },
+  {
+   "date": "2026-12-25",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -621143,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-25",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 3774,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-25",
+   "description": "ACH DEBIT GREEN BEAN IMPORTERS LLC CO ID 4419920031 PPD REF 88213",
+   "amount_cents": -385994,
+   "balance_cents": 1144985
+  },
+  {
+   "date": "2026-12-26",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -722736,
+   "balance_cents": 422249
+  },
+  {
+   "date": "2026-12-27",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -39246,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-27",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 389,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-27",
+   "description": "SHELL OIL 57444 EMERYVILLE CA",
+   "amount_cents": -5127,
+   "balance_cents": 378265
+  },
+  {
+   "date": "2026-12-28",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -6755,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-28",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 367190
+  },
+  {
+   "date": "2026-12-29",
+   "description": "CHECK #1042",
+   "amount_cents": -68349,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-29",
+   "description": "COSTCO WHSE #0482 RICHMOND CA",
+   "amount_cents": -23293,
+   "balance_cents": 275548
+  },
+  {
+   "date": "2026-12-30",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -7864,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-30",
+   "description": "AMZN MKTP US*2K4T91 AMZN.COM/BILL",
+   "amount_cents": -5217,
+   "balance_cents": 262467
+  },
+  {
+   "date": "2026-12-31",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 149784,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-31",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 4723,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-31",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -204228,
+   "balance_cents": null
+  },
+  {
+   "date": "2026-12-31",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -33488,
+   "balance_cents": 179258
+  }
+ ]
+}

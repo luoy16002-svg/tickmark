@@ -1,0 +1,397 @@
+{
+ "bank": "Harbor & Pine Credit Union",
+ "layout": "us-signed-amount",
+ "currency": "USD",
+ "period": [
+  "2026-09-01",
+  "2026-09-30"
+ ],
+ "opening_cents": 2325693,
+ "closing_cents": 2702631,
+ "transactions": [
+  {
+   "date": "2026-09-01",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -2732,
+   "balance_cents": 2322961
+  },
+  {
+   "date": "2026-09-02",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 262837,
+   "balance_cents": 2585798
+  },
+  {
+   "date": "2026-09-02",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 100094,
+   "balance_cents": 2685892
+  },
+  {
+   "date": "2026-09-03",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 245432,
+   "balance_cents": 2931324
+  },
+  {
+   "date": "2026-09-04",
+   "description": "ACH DEBIT GREEN BEAN IMPORTERS LLC CO ID 4419920031 PPD REF 88213",
+   "amount_cents": -180495,
+   "balance_cents": 2750829
+  },
+  {
+   "date": "2026-09-04",
+   "description": "UPS*1Z9X44A60318772 UPS.COM",
+   "amount_cents": -3282,
+   "balance_cents": 2747547
+  },
+  {
+   "date": "2026-09-04",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 363,
+   "balance_cents": 2747910
+  },
+  {
+   "date": "2026-09-05",
+   "description": "COSTCO WHSE #0482 RICHMOND CA",
+   "amount_cents": -7849,
+   "balance_cents": 2740061
+  },
+  {
+   "date": "2026-09-05",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 391994,
+   "balance_cents": 3132055
+  },
+  {
+   "date": "2026-09-06",
+   "description": "ACH DEBIT GREEN BEAN IMPORTERS LLC CO ID 4419920031 PPD REF 88213",
+   "amount_cents": -236007,
+   "balance_cents": 2896048
+  },
+  {
+   "date": "2026-09-07",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 197,
+   "balance_cents": 2896245
+  },
+  {
+   "date": "2026-09-07",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 124450,
+   "balance_cents": 3020695
+  },
+  {
+   "date": "2026-09-08",
+   "description": "COSTCO WHSE #0482 RICHMOND CA",
+   "amount_cents": -25970,
+   "balance_cents": 2994725
+  },
+  {
+   "date": "2026-09-09",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 170326,
+   "balance_cents": 3165051
+  },
+  {
+   "date": "2026-09-09",
+   "description": "WIRE TRANSFER OUT FEE",
+   "amount_cents": -3000,
+   "balance_cents": 3162051
+  },
+  {
+   "date": "2026-09-09",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 220,
+   "balance_cents": 3162271
+  },
+  {
+   "date": "2026-09-10",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 4028,
+   "balance_cents": 3166299
+  },
+  {
+   "date": "2026-09-11",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 3161979
+  },
+  {
+   "date": "2026-09-11",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 154151,
+   "balance_cents": 3316130
+  },
+  {
+   "date": "2026-09-11",
+   "description": "MONTHLY SERVICE FEE",
+   "amount_cents": -1500,
+   "balance_cents": 3314630
+  },
+  {
+   "date": "2026-09-11",
+   "description": "ACH DEBIT GREEN BEAN IMPORTERS LLC CO ID 4419920031 PPD REF 88213",
+   "amount_cents": -303476,
+   "balance_cents": 3011154
+  },
+  {
+   "date": "2026-09-11",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -198280,
+   "balance_cents": 2812874
+  },
+  {
+   "date": "2026-09-12",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 85022,
+   "balance_cents": 2897896
+  },
+  {
+   "date": "2026-09-12",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -9323,
+   "balance_cents": 2888573
+  },
+  {
+   "date": "2026-09-12",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 3128,
+   "balance_cents": 2891701
+  },
+  {
+   "date": "2026-09-13",
+   "description": "INTUIT *QBOOKS ONLINE CL.INTUIT.COM",
+   "amount_cents": -9000,
+   "balance_cents": 2882701
+  },
+  {
+   "date": "2026-09-13",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 100022,
+   "balance_cents": 2982723
+  },
+  {
+   "date": "2026-09-13",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -8373,
+   "balance_cents": 2974350
+  },
+  {
+   "date": "2026-09-14",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 159530,
+   "balance_cents": 3133880
+  },
+  {
+   "date": "2026-09-14",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 358286,
+   "balance_cents": 3492166
+  },
+  {
+   "date": "2026-09-14",
+   "description": "AMAZON WEB SERVICES AWS.AMAZON.CO",
+   "amount_cents": -5817,
+   "balance_cents": 3486349
+  },
+  {
+   "date": "2026-09-15",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": 3472350
+  },
+  {
+   "date": "2026-09-15",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 193066,
+   "balance_cents": 3665416
+  },
+  {
+   "date": "2026-09-16",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 97750,
+   "balance_cents": 3763166
+  },
+  {
+   "date": "2026-09-17",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 2867,
+   "balance_cents": 3766033
+  },
+  {
+   "date": "2026-09-17",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -520163,
+   "balance_cents": 3245870
+  },
+  {
+   "date": "2026-09-17",
+   "description": "AMAZON WEB SERVICES AWS.AMAZON.CO",
+   "amount_cents": -7554,
+   "balance_cents": 3238316
+  },
+  {
+   "date": "2026-09-18",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 123145,
+   "balance_cents": 3361461
+  },
+  {
+   "date": "2026-09-18",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -146571,
+   "balance_cents": 3214890
+  },
+  {
+   "date": "2026-09-19",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 96850,
+   "balance_cents": 3311740
+  },
+  {
+   "date": "2026-09-19",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 410,
+   "balance_cents": 3312150
+  },
+  {
+   "date": "2026-09-19",
+   "description": "COSTCO WHSE #0482 RICHMOND CA",
+   "amount_cents": -14823,
+   "balance_cents": 3297327
+  },
+  {
+   "date": "2026-09-21",
+   "description": "ACH DEBIT GREEN BEAN IMPORTERS LLC CO ID 4419920031 PPD REF 88213",
+   "amount_cents": -355228,
+   "balance_cents": 2942099
+  },
+  {
+   "date": "2026-09-21",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 170158,
+   "balance_cents": 3112257
+  },
+  {
+   "date": "2026-09-21",
+   "description": "CHECK #1042",
+   "amount_cents": -95894,
+   "balance_cents": 3016363
+  },
+  {
+   "date": "2026-09-22",
+   "description": "SHELL OIL 57444 EMERYVILLE CA",
+   "amount_cents": -5103,
+   "balance_cents": 3011260
+  },
+  {
+   "date": "2026-09-22",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 3006940
+  },
+  {
+   "date": "2026-09-23",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 349018,
+   "balance_cents": 3355958
+  },
+  {
+   "date": "2026-09-23",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 2718,
+   "balance_cents": 3358676
+  },
+  {
+   "date": "2026-09-23",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -715583,
+   "balance_cents": 2643093
+  },
+  {
+   "date": "2026-09-24",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 331527,
+   "balance_cents": 2974620
+  },
+  {
+   "date": "2026-09-25",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 157465,
+   "balance_cents": 3132085
+  },
+  {
+   "date": "2026-09-25",
+   "description": "INTUIT *QBOOKS ONLINE CL.INTUIT.COM",
+   "amount_cents": -9000,
+   "balance_cents": 3123085
+  },
+  {
+   "date": "2026-09-26",
+   "description": "AMAZON WEB SERVICES AWS.AMAZON.CO",
+   "amount_cents": -4799,
+   "balance_cents": 3118286
+  },
+  {
+   "date": "2026-09-26",
+   "description": "CHECK #1042",
+   "amount_cents": -74797,
+   "balance_cents": 3043489
+  },
+  {
+   "date": "2026-09-26",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 182204,
+   "balance_cents": 3225693
+  },
+  {
+   "date": "2026-09-26",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 110195,
+   "balance_cents": 3335888
+  },
+  {
+   "date": "2026-09-26",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 2336,
+   "balance_cents": 3338224
+  },
+  {
+   "date": "2026-09-27",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -30911,
+   "balance_cents": 3307313
+  },
+  {
+   "date": "2026-09-28",
+   "description": "COSTCO WHSE #0482 RICHMOND CA",
+   "amount_cents": -30305,
+   "balance_cents": 3277008
+  },
+  {
+   "date": "2026-09-29",
+   "description": "SQ *JOE'S HARDWARE OAKLAND",
+   "amount_cents": -6691,
+   "balance_cents": 3270317
+  },
+  {
+   "date": "2026-09-29",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -696884,
+   "balance_cents": 2573433
+  },
+  {
+   "date": "2026-09-30",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 125583,
+   "balance_cents": 2699016
+  },
+  {
+   "date": "2026-09-30",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 3615,
+   "balance_cents": 2702631
+  }
+ ]
+}

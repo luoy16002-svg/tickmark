@@ -1,0 +1,77 @@
+/* Theme "ledger": an accountant's desk. A green blotter, the bank's statement on white bond, a columnar
+   ledger pad with green rules and a red margin, blue-black ink, a green pencil for ticks and a red one for
+   rows that do not tie. Light falls from the top left. Page styles use only these variables. */
+
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+:root {
+  --font-ui: 'Geist Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-num: 'Geist Mono Variable', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  --desk: #2c3b33;
+  --desk-deep: #24312a;
+  --desk-ink: #dfe7df;
+  --desk-ink-soft: #a9b8ad;
+  --desk-line: #3d4f45;
+
+  --bond: #fbfbf8;
+  --bond-edge: #e3e5de;
+
+  --pad: #f2f6ee;
+  --pad-head: #e6efe2;
+  --pad-rule: #c8dcca;
+  --pad-rule-strong: #9fc1a6;
+  --pad-margin: #d9907f;
+  --pad-hover: #e3eedf;
+  --pad-select: #d7e7f3;
+
+  --ink: #1d2a36;
+  --ink-soft: #4e5d69;
+  --ink-faint: #7f8c94;
+
+  --tick: #2f7a4f;
+  --flag: #c0402c;
+  --flag-wash: #f7e1da;
+  --accent: #23497a;
+  --accent-ink: #f4f7fb;
+
+  --shadow-sheet: 0 1px 0 rgba(20, 30, 24, 0.18), 3px 6px 14px rgba(14, 24, 18, 0.32);
+  --row-h: 30px;
+  --radius: 2px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --desk: #161d19;
+    --desk-deep: #111713;
+    --desk-ink: #dfe7df;
+    --desk-ink-soft: #94a397;
+    --desk-line: #2a3630;
+
+    --bond: #e9ebe4;
+    --bond-edge: #c9ccc2;
+
+    --pad: #1e2622;
+    --pad-head: #26302b;
+    --pad-rule: #2e3c34;
+    --pad-rule-strong: #3f5548;
+    --pad-margin: #8c4a3f;
+    --pad-hover: #26322c;
+    --pad-select: #24364a;
+
+    --ink: #e3e9e1;
+    --ink-soft: #aab7ad;
+    --ink-faint: #7b897f;
+
+    --tick: #67c48c;
+    --flag: #f07d65;
+    --flag-wash: #3a2522;
+    --accent: #9cc2f0;
+    --accent-ink: #10202f;
+
+    --shadow-sheet: 0 1px 0 rgba(0, 0, 0, 0.4), 3px 6px 16px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+}

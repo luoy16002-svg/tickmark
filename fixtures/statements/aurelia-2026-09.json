@@ -1,0 +1,295 @@
+{
+ "bank": "Banca Aurelia S.p.A.",
+ "layout": "eu-decimal-comma-two-dates",
+ "currency": "EUR",
+ "period": [
+  "2026-09-01",
+  "2026-09-30"
+ ],
+ "opening_cents": 1030731,
+ "closing_cents": 1357845,
+ "transactions": [
+  {
+   "date": "2026-09-01",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -139358,
+   "balance_cents": 891373
+  },
+  {
+   "date": "2026-09-01",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -243319,
+   "balance_cents": 648054
+  },
+  {
+   "date": "2026-09-03",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 211,
+   "balance_cents": 648265
+  },
+  {
+   "date": "2026-09-03",
+   "description": "AMZN MKTP US*2K4T91 AMZN.COM/BILL",
+   "amount_cents": -5504,
+   "balance_cents": 642761
+  },
+  {
+   "date": "2026-09-03",
+   "description": "COSTCO WHSE #0482 RICHMOND CA",
+   "amount_cents": -11355,
+   "balance_cents": 631406
+  },
+  {
+   "date": "2026-09-04",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": 617407
+  },
+  {
+   "date": "2026-09-04",
+   "description": "INTEREST PAYMENT",
+   "amount_cents": 168,
+   "balance_cents": 617575
+  },
+  {
+   "date": "2026-09-04",
+   "description": "MONTHLY SERVICE FEE",
+   "amount_cents": -1500,
+   "balance_cents": 616075
+  },
+  {
+   "date": "2026-09-04",
+   "description": "REFUND AMZN MKTP US*7Q1L0",
+   "amount_cents": 3540,
+   "balance_cents": 619615
+  },
+  {
+   "date": "2026-09-04",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 91583,
+   "balance_cents": 711198
+  },
+  {
+   "date": "2026-09-06",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 706878
+  },
+  {
+   "date": "2026-09-07",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 95041,
+   "balance_cents": 801919
+  },
+  {
+   "date": "2026-09-07",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -41172,
+   "balance_cents": 760747
+  },
+  {
+   "date": "2026-09-07",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 236649,
+   "balance_cents": 997396
+  },
+  {
+   "date": "2026-09-07",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -554615,
+   "balance_cents": 442781
+  },
+  {
+   "date": "2026-09-07",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 342406,
+   "balance_cents": 785187
+  },
+  {
+   "date": "2026-09-08",
+   "description": "UPS*1Z9X44A60318772 UPS.COM",
+   "amount_cents": -8807,
+   "balance_cents": 776380
+  },
+  {
+   "date": "2026-09-08",
+   "description": "PG&E UTILITY BILL PAYMENT",
+   "amount_cents": -41638,
+   "balance_cents": 734742
+  },
+  {
+   "date": "2026-09-09",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 401989,
+   "balance_cents": 1136731
+  },
+  {
+   "date": "2026-09-09",
+   "description": "IRS USATAXPYMT EFTPS 270611844",
+   "amount_cents": -121509,
+   "balance_cents": 1015222
+  },
+  {
+   "date": "2026-09-09",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 1010902
+  },
+  {
+   "date": "2026-09-10",
+   "description": "MONTHLY SERVICE FEE",
+   "amount_cents": -1500,
+   "balance_cents": 1009402
+  },
+  {
+   "date": "2026-09-12",
+   "description": "AMZN MKTP US*2K4T91 AMZN.COM/BILL",
+   "amount_cents": -16035,
+   "balance_cents": 993367
+  },
+  {
+   "date": "2026-09-13",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 422480,
+   "balance_cents": 1415847
+  },
+  {
+   "date": "2026-09-14",
+   "description": "AMZN MKTP US*2K4T91 AMZN.COM/BILL",
+   "amount_cents": -12995,
+   "balance_cents": 1402852
+  },
+  {
+   "date": "2026-09-15",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 79814,
+   "balance_cents": 1482666
+  },
+  {
+   "date": "2026-09-15",
+   "description": "CHECK #1042",
+   "amount_cents": -81007,
+   "balance_cents": 1401659
+  },
+  {
+   "date": "2026-09-15",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 234430,
+   "balance_cents": 1636089
+  },
+  {
+   "date": "2026-09-15",
+   "description": "UPS*1Z9X44A60318772 UPS.COM",
+   "amount_cents": -10696,
+   "balance_cents": 1625393
+  },
+  {
+   "date": "2026-09-15",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 1621073
+  },
+  {
+   "date": "2026-09-16",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 66081,
+   "balance_cents": 1687154
+  },
+  {
+   "date": "2026-09-16",
+   "description": "INTUIT *QBOOKS ONLINE CL.INTUIT.COM",
+   "amount_cents": -9000,
+   "balance_cents": 1678154
+  },
+  {
+   "date": "2026-09-17",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 233724,
+   "balance_cents": 1911878
+  },
+  {
+   "date": "2026-09-18",
+   "description": "SHOPIFY PAYOUT 88231071",
+   "amount_cents": 193043,
+   "balance_cents": 2104921
+  },
+  {
+   "date": "2026-09-19",
+   "description": "RENT 14 HARBOR ST UNIT B",
+   "amount_cents": -315000,
+   "balance_cents": 1789921
+  },
+  {
+   "date": "2026-09-20",
+   "description": "CHECK #1042",
+   "amount_cents": -66258,
+   "balance_cents": 1723663
+  },
+  {
+   "date": "2026-09-23",
+   "description": "COMCAST BUSINESS 8155 400",
+   "amount_cents": -13999,
+   "balance_cents": 1709664
+  },
+  {
+   "date": "2026-09-23",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 104627,
+   "balance_cents": 1814291
+  },
+  {
+   "date": "2026-09-23",
+   "description": "SQUARE INC DEPOSIT 260910",
+   "amount_cents": 380330,
+   "balance_cents": 2194621
+  },
+  {
+   "date": "2026-09-24",
+   "description": "MOBILE DEPOSIT REF 10234 MARIGOLD CAFE WHOLESALE",
+   "amount_cents": 86187,
+   "balance_cents": 2280808
+  },
+  {
+   "date": "2026-09-25",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 201892,
+   "balance_cents": 2482700
+  },
+  {
+   "date": "2026-09-25",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -734528,
+   "balance_cents": 1748172
+  },
+  {
+   "date": "2026-09-26",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 1743852
+  },
+  {
+   "date": "2026-09-26",
+   "description": "GOOGLE *WORKSPACE_FERRYBANK",
+   "amount_cents": -4320,
+   "balance_cents": 1739532
+  },
+  {
+   "date": "2026-09-27",
+   "description": "UPS*1Z9X44A60318772 UPS.COM",
+   "amount_cents": -7863,
+   "balance_cents": 1731669
+  },
+  {
+   "date": "2026-09-27",
+   "description": "PAYROLL GUSTO NET PAY BATCH 552019",
+   "amount_cents": -678288,
+   "balance_cents": 1053381
+  },
+  {
+   "date": "2026-09-29",
+   "description": "STRIPE TRANSFER ST-X4K2Q9 FERRYBANK COFFEE ROASTERS",
+   "amount_cents": 304464,
+   "balance_cents": 1357845
+  }
+ ]
+}
