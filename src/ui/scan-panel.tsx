@@ -11,7 +11,7 @@ type Stage =
   | { kind: 'reading'; p: ScanProgress | null }
   | { kind: 'failed'; message: string };
 
-export function ScanPanel({ opened, onRows }: { opened: Opened; onRows: () => void }) {
+export function ScanPanel({ opened, onRows, onBand }: { opened: Opened; onRows: () => void; onBand?: (b: { page: number; band: number; bands: number } | null) => void }) {
   const [stage, setStage] = useState<Stage>({ kind: 'idle' });
   const gpu = hasWebGPU();
 
@@ -20,12 +20,17 @@ export function ScanPanel({ opened, onRows }: { opened: Opened; onRows: () => vo
       setStage({ kind: 'loading', p: null });
       await gemma((p) => setStage({ kind: 'loading', p }));
       setStage({ kind: 'reading', p: null });
-      const parsed = await readScan(opened.doc, (p) => setStage({ kind: 'reading', p }));
+      const parsed = await readScan(opened.doc, (p) => {
+        setStage({ kind: 'reading', p });
+        onBand?.({ page: p.page, band: p.band, bands: p.bands });
+      });
+      onBand?.(null);
       categorise(parsed.transactions);
       parsed.notes.push('Read from a scan by Gemma 4 on this computer. Every tick still comes from the arithmetic.');
       opened.parsed = parsed;
       onRows();
     } catch (e) {
+      onBand?.(null);
       const msg = e instanceof Error ? e.message : String(e);
       setStage({ kind: 'failed', message: /buffer size|out of memory|device (was )?lost/i.test(msg) ? 'The graphics card ran out of memory for the model. Close other tabs that use the graphics card and try again.' : msg });
     }

@@ -32,6 +32,7 @@ export function App() {
   const [page, setPage] = useState(1);
   const [menu, setMenu] = useState<'export' | 'samples' | null>(null);
   const [drag, setDrag] = useState(false);
+  const [band, setBand] = useState<{ page: number; band: number; bands: number } | null>(null);
   const watcher = useRef<ReturnType<typeof watchNetwork> | null>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const bump = () => setVersion((v) => v + 1);
@@ -168,11 +169,15 @@ export function App() {
               focus={focus}
               onPage={setPage}
               onPick={(id) => setFocus(id)}
+              band={band}
             />
           </section>
           <section class="sheet-pad" aria-label="The ledger">
             {ready.scanned && ready.parsed.transactions.length === 0 ? (
-              <ScanPanel opened={ready} onRows={() => bump()} />
+              <ScanPanel opened={ready} onRows={() => bump()} onBand={(b) => {
+                setBand(b);
+                if (b && b.page !== page) setPage(b.page);
+              }} />
             ) : (
               <Ledger
                 opened={ready}
@@ -404,13 +409,19 @@ function Ledger({ opened, focus, onFocus, onChange }: {
               {t.balance !== undefined ? formatMoney(t.balance, d) : ''}
               {t.check === 'off' && <Ring />}
             </span>
-            {t.check === 'off' && (
-              <div class="note" onClick={(e) => e.stopPropagation()}>
-                <p>
-                  The bank printed <b class="num">{formatMoney(t.balance, d)}</b>; the rows above add up to{' '}
-                  <b class="num">{formatMoney((t.balance ?? 0) - (t.diff ?? 0), d)}</b>, a gap of <b class="num">{formatMoney(t.diff, d)}</b>.
-                  Look at this row on the page. If an amount was misread, type the right one:
-                </p>
+            {(t.check === 'off' || focus === t.id) && (
+              <div class={`note ${t.check === 'off' ? '' : 'neutral'}`} onClick={(e) => e.stopPropagation()}>
+                {t.check === 'off' && t.diff !== undefined ? (
+                  <p>
+                    The bank printed <b class="num">{formatMoney(t.balance, d)}</b>; the rows above add up to{' '}
+                    <b class="num">{formatMoney((t.balance ?? 0) - (t.diff ?? 0), d)}</b>, a gap of <b class="num">{formatMoney(t.diff, d)}</b>.
+                    Look at this row on the page. If an amount was misread, type the right one:
+                  </p>
+                ) : t.check === 'off' ? (
+                  <p>This day's rows do not add up to the balance printed at its end. Look at them on the page and correct the one that differs:</p>
+                ) : (
+                  <p>Correct this row if it differs from the page. The ledger checks it again at once.</p>
+                )}
                 <form onSubmit={(e) => {
                   e.preventDefault();
                   const v = (e.currentTarget.elements.namedItem('amt') as HTMLInputElement).value;

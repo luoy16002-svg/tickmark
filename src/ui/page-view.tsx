@@ -12,9 +12,10 @@ interface Props {
   focus: number | null;
   onPage: (n: number) => void;
   onPick: (id: number) => void;
+  band?: { page: number; band: number; bands: number } | null;
 }
 
-export function PageView({ doc, page, pages, rows, focus, onPage, onPick }: Props) {
+export function PageView({ doc, page, pages, rows, focus, onPage, onPick, band }: Props) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const wrap = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0);
@@ -64,6 +65,9 @@ export function PageView({ doc, page, pages, rows, focus, onPage, onPick }: Prop
       </div>
       <div class="bond" ref={wrap} style={{ aspectRatio: `${size.w} / ${size.h}` }}>
         <canvas ref={canvas} />
+        {band && band.page === page && (
+          <div class="reading-band" style={{ top: `${((band.band - 1) / band.bands) * 100}%`, height: `${100 / band.bands}%` }} aria-hidden="true" />
+        )}
         {scale > 0 && onThisPage.map((r) => (
           <button
             key={r.id}

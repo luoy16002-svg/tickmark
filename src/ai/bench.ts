@@ -20,10 +20,10 @@ async function main() {
   const t0 = performance.now();
   await gemma();
   log(`model ready ${((performance.now() - t0) / 1000).toFixed(1)} s`);
-  const data = await (await fetch(`/samples/${FILE}-scan.pdf`)).arrayBuffer();
+  const data = await (await fetch(`/fixtures/statements/${FILE}-scan.pdf`)).arrayBuffer();
   const doc = await pdfjs.getDocument({ data: new Uint8Array(data), verbosity: 0 }).promise;
   const pages = Number(q.get('pages') ?? '0');
-  const want = await (await fetch(`/samples/${FILE}.json`)).json();
+  const want = await (await fetch(`/fixtures/statements/${FILE}.json`)).json();
   const t1 = performance.now();
   let lastBand = '';
   const raw: Record<string, string> = {};

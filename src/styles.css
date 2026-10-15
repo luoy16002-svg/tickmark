@@ -281,3 +281,11 @@ button.link { background: none; border: 0; padding: 0; color: var(--accent); tex
 button.quiet-ink { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; background: transparent; color: var(--accent); border: 1px solid var(--pad-rule-strong); white-space: nowrap; }
 button.quiet-ink:hover:not(:disabled) { background: var(--bond); }
 .warn-line { color: var(--flag); }
+.note.neutral { border-left-color: var(--accent); }
+.reading-band {
+  position: absolute; left: 0; right: 0;
+  border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  transition: top 380ms ease;
+  pointer-events: none;
+}

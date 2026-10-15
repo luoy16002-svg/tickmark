@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tickmark cover</title>
+<style>
+  @import '/src/theme/ledger/theme.css';
+  :root { color-scheme: light; }
+  html, body { margin: 0; background: #1b231e; }
+  .cover {
+    position: relative; width: 1000px; height: 420px; overflow: hidden;
+    font-family: var(--font-ui); color: #1d2a36;
+    background:
+      linear-gradient(90deg, transparent 58px, #d9907f 58px, #d9907f 59.5px, transparent 59.5px, transparent 64px, #d9907f 64px, #d9907f 65.5px, transparent 65.5px),
+      repeating-linear-gradient(180deg, transparent 0 41px, #c8dcca 41px 42px),
+      #f2f6ee;
+  }
+  .cover::after {
+    /* one soft light from the top left, the same as on the desk */
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(130% 120% at 0% 0%, rgba(255,255,255,0.35), transparent 55%);
+  }
+  .words { position: absolute; left: 92px; top: 66px; width: 470px; }
+  .word { display: flex; align-items: center; gap: 14px; font-size: 92px; font-weight: 680; letter-spacing: -0.035em; line-height: 1; }
+  .word svg { width: 70px; height: 54px; margin-top: 8px; }
+  .word path { fill: none; stroke: #2f7a4f; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+  .line { margin-top: 30px; font-size: 27px; line-height: 42px; font-weight: 460; color: #33424e; letter-spacing: -0.01em; }
+  .line b { font-weight: 640; color: #1d2a36; }
+  .ledger { position: absolute; right: 54px; top: 42px; width: 360px; font-variant-numeric: tabular-nums; }
+  .row { display: grid; grid-template-columns: 34px 1fr 118px; align-items: center; height: 42px; font-size: 20px; }
+  .row .amt { text-align: right; font-weight: 520; }
+  .row .tick path { fill: none; stroke: #2f7a4f; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .row .who { color: #4e5d69; font-size: 17px; letter-spacing: 0.01em; }
+  .row.off .amt { color: #c0402c; position: relative; }
+  .ring { position: absolute; left: -10px; right: -12px; top: -9px; bottom: -9px; }
+  .ring path { fill: none; stroke: #c0402c; stroke-width: 2.2; stroke-linecap: round; }
+  .sum { border-top: 2px solid #1d2a36; }
+  .sum .amt { font-weight: 700; border-bottom: 4px double #1d2a36; line-height: 30px; }
+  .stamp {
+    position: absolute; right: 66px; bottom: 34px;
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    padding: 11px 24px 9px; color: #2f7a4f;
+    border: 3.5px solid currentColor; outline: 1.5px solid currentColor; outline-offset: 3px;
+    transform: rotate(-6deg); opacity: 0.9;
+  }
+  .stamp b { font-size: 30px; font-weight: 780; letter-spacing: 0.09em; text-transform: uppercase; }
+  .stamp span { font-size: 15px; font-weight: 520; }
+  .foot { position: absolute; left: 92px; bottom: 36px; font-size: 18px; color: #4e5d69; }
+</style>
+</head>
+<body>
+<div class="cover" id="cover">
+  <div class="words">
+    <div class="word">
+      <svg viewBox="0 0 24 18"><path d="M2.6 9.8c1.6 1.1 3.1 2.6 4.6 5.1.4.6 1 .6 1.3 0C11.4 9.3 15.7 4.5 21.6 1.6" /></svg>
+      Tickmark
+    </div>
+    <div class="line">Bank statements into spreadsheets, <b>every row checked to the cent</b> against the bank's own balance.</div>
+  </div>
+  <div class="ledger" aria-hidden="true">
+    <div class="row"><svg class="tick" viewBox="0 0 24 18" width="24" height="18"><path d="M2.6 9.8c1.6 1.1 3.1 2.6 4.6 5.1.4.6 1 .6 1.3 0C11.4 9.3 15.7 4.5 21.6 1.6"/></svg><span class="who">Joe's Hardware</span><span class="amt">23,229.61</span></div>
+    <div class="row"><svg class="tick" viewBox="0 0 24 18" width="24" height="18"><path d="M2.6 9.8c1.6 1.1 3.1 2.6 4.6 5.1.4.6 1 .6 1.3 0C11.4 9.3 15.7 4.5 21.6 1.6"/></svg><span class="who">Square deposit</span><span class="amt">25,857.98</span></div>
+    <div class="row"><svg class="tick" viewBox="0 0 24 18" width="24" height="18"><path d="M2.6 9.8c1.6 1.1 3.1 2.6 4.6 5.1.4.6 1 .6 1.3 0C11.4 9.3 15.7 4.5 21.6 1.6"/></svg><span class="who">Shopify payout</span><span class="amt">26,858.92</span></div>
+    <div class="row"><svg class="tick" viewBox="0 0 24 18" width="24" height="18"><path d="M2.6 9.8c1.6 1.1 3.1 2.6 4.6 5.1.4.6 1 .6 1.3 0C11.4 9.3 15.7 4.5 21.6 1.6"/></svg><span class="who">Stripe transfer</span><span class="amt">29,313.24</span></div>
+    <div class="row sum"><span></span><span class="who">Closing</span><span class="amt">27,026.31</span></div>
+  </div>
+  <div class="stamp"><b>Reconciled</b><span>Gemma 4, in your browser</span></div>
+  <div class="foot">Open source. Nothing is uploaded.</div>
+</div>
+</body>
+</html>
